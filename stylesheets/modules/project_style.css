@@ -1,0 +1,289 @@
+#project {
+    background-color: rgba(121, 14, 148, 0.212);
+    height: auto;
+    width: 100vw;
+    z-index: 5;
+    top: 0;
+    position: absolute;
+    transform: translateX(100%);
+}
+
+/*
+
+    Animating the Project Card :o 
+
+*/
+
+@keyframes enterCard-right {
+    from { transform: translateX(100%); }
+    to { transform: translateX(96%); }
+}
+
+@keyframes exitCard-right {
+    from { transform: translateX(96%); }
+    to { transform: translateX(100%); }
+}
+
+@keyframes setCard-right {
+    to { transform: translateX(0%); }
+}
+
+@keyframes resetCard-right {
+    from { transform: translateX(0%); }
+    to { transform: translateX(100%); }
+}
+
+/*
+
+    Styling the first thing you see (intro)
+    Projects
+
+*/
+
+#project-intro {
+    position: relative;
+}
+
+#hero {
+    background-color: #302936;
+    height: max(50vh, 17.75rem);
+    width: 100vw;
+}
+
+#scroll-horizontal, .card {
+    transform: rotateX(180deg);
+}
+
+#scroll-horizontal {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: max(50vh, 17.75rem);
+    overflow: auto;
+    border-top: 5px #302936 solid;
+    border-bottom: 5px #302936 solid;
+}
+
+#scroll-horizontal::-webkit-scrollbar {
+    width: 20px;
+    height: 10px;
+}
+
+#scroll-horizontal::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+
+#scroll-horizontal::-webkit-scrollbar-thumb {
+    background: #719abb; 
+    border-radius: 10px;
+}
+
+#scroll-horizontal::-webkit-scrollbar-thumb:hover {
+    background: #5f85a5;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(#719abbdc, #163c5c4f);
+    min-width: calc(5rem + 15vh);
+    max-width: calc(5rem + 15vh);
+    margin: 0px calc(2rem + 0.5vh) 0px calc(2rem + 0.5vh);
+    aspect-ratio: 2/3;
+    padding: 2% 2% 2% 2%;
+}
+
+.card-header {
+    font-family: 'Cabin', sans-serif;
+    color: rgb(231, 231, 231);
+    font-size: calc(1rem + 0.5vw);
+    margin-bottom: 1rem;
+}
+
+.card-description {
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(224, 224, 224);
+    font-size: calc(0.8rem + 0.3vw);
+}
+
+.card-button {
+    font-family: 'Cabin', sans-serif;
+    padding: 5px;
+    border: 1px solid white;
+    font-size: calc(0.9rem + 0.4vw);
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.card-button:hover {
+    background-color: white;
+    color: #5f14a0;
+    border: 1px solid #5f14a0;
+    transition: all 0.5s;
+}
+
+
+.card > a {
+    position: absolute;
+    bottom: 10%;
+    left: 30%;
+    text-decoration: none;
+}
+
+#scroll-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 17.75rem;
+    height: 50%;
+    background-image: url("../../img/github-social.png");
+    background-size: cover;
+    filter: opacity(100%) saturate(10%) hue-rotate(20deg);
+    background-position: 50% 50%;
+}
+
+#project-image-container {
+    width: 50vw;
+    height: 50vh;
+}
+
+#project-image-container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    filter: saturate(10%) opacity(30%);
+}
+
+#project-stuff {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#302936, #5f14a0);
+    left: 35%;
+    top: 0%;
+    width: 70%;
+    height: 50vh;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 15% 100%);
+}
+
+#project-title {
+    color: rgb(231, 231, 231);
+    font-family: 'Cabin', sans-serif;
+    font-size: calc(3vw + 2rem);
+}
+
+.project-description {
+    font-size: calc(0.5vw + 0.6rem);
+    font-family: 'Ubuntu', sans-serif;
+    color: #719abb;
+}
+
+/*
+
+    Contact Me Form
+
+*/
+
+#contact {
+    position: relative;
+    background-color: #5f14a0;
+    width: 100vw;
+    height: 100vh;
+    perspective: 70rem;
+    perspective-origin: 45% center;
+}
+
+#contact-title {
+    transform-style: preserve-3d;
+    transform: rotate3d(0, 1, 0, 55deg);
+    position: absolute;
+    z-index: 500;
+    top: 20%;
+    left: 10%;
+    font-family: '', sans-serif;
+    font-size: calc(5vw + 2.1rem);
+    color: rgba(255, 255, 255, 0.685);
+}
+
+#contact-bg {
+    position: absolute;
+    background: url("../../img/nightsky-2.jpg");
+    background-size: cover;
+    background-position: 50% 60%;
+    filter: opacity(90%) saturate(50%) hue-rotate(40deg);
+    width: 100vw;
+    height: 100vh;
+}
+
+#contact-form {
+    background-color:#3029367a;
+    padding: 5% 5% 5% 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 501;
+    height: auto;
+    left: 20%;
+    top: 42%;
+    width: 20rem;
+}
+
+.contact-subheader {
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+}
+
+#contact-form > input {
+    box-sizing: border-box;
+    width: 85%;
+}
+
+#contact-form > input:focus {
+    border: 4px #719abb solid;
+}
+
+#contact-form > textarea:focus {
+    border: 4px #719abb solid;
+}
+
+@media only screen and (max-width: 600px) {
+    #contact-form {
+        left: 0%;
+        width: 100%;
+        top: 30%;
+    }
+    #contact-title {
+        left: 0%;
+        top: 10%;
+    }
+}
+
+#message {
+    width: 85%;
+    box-sizing: border-box;
+    height: 8rem;
+    resize: none;
+    padding: 4px 4px 4px 4px;
+}
+
+#contact-description {
+    color:#9ec3e2;
+    margin-bottom: 1rem;
+}
+
+#submit {
+    background-color: #9ec3e2;
+    color: rgb(42, 2, 42);
+    font-family: 'Ubuntu', sans-serif;
+    cursor: pointer;
+}

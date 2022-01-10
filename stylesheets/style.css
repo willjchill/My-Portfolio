@@ -1,0 +1,9 @@
+/*
+
+    COMBINING ALL MODULES
+
+*/
+
+@import url(./modules/main_style.css);
+@import url(./modules/about_style.css);
+@import url(./modules/project_style.css);

@@ -1,0 +1,9 @@
+/*
+
+    COMBINING ALL MODULES
+
+*/
+
+@import url(/MyPortfolio/stylesheets/modules/main_style.css);
+@import url(/MyPortfolio/stylesheets/modules/about_style.css);
+@import url(/MyPortfolio/stylesheets/modules/project_style.css);

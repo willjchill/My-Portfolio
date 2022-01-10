@@ -1,0 +1,367 @@
+#about {
+    height: auto;
+    width: 100vw;
+    z-index: 2;
+    top: 0;
+    position: absolute;
+    transform: translateX(-100%);
+    overflow-y: hidden;
+}
+
+#about::before {
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("/MyPortfolio/img/night-sky.jpg");
+    background-size: cover;
+    filter: saturate(50%) hue-rotate(300deg);
+}
+
+/*
+
+    About Intro Styling
+
+*/
+
+#about-intro {
+    width: 100vw;
+    height: auto;
+    min-height: 550px;
+    min-width: 280px;
+    background-color: #172b50;
+}
+
+#about-header {
+    position: relative;
+    z-index: 3;
+    background: linear-gradient(#2c3b4793, #1f262c77 100%);
+    width: 100%;
+    height: 38vh;
+    display: flex;
+}
+
+#about-image-container {
+    width: 50%;
+    height: 100%;
+}
+
+#about-image-container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 80% 0%;
+}
+
+#about-stuff {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border-right: 5px solid #7f52a7e8;
+}
+
+#about-stuff > div {
+    margin: 5px;
+}
+
+#about-title {
+    font-family: 'Cabin', sans-serif;
+    font-size: calc(1.5vw + 1.5rem);
+    color: #fafafa;
+}
+
+.about-description {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: calc(0.4vw + 0.9rem);
+    color: #719abb;
+}
+
+#about-break {
+    height: 1%;
+    background-color: #734997e8;
+    box-shadow: #73499783 0px 0px 3px 3px;
+    filter: brightness(150%);
+}
+
+#about-content {
+    width: 100%;
+    min-height: 54vh;
+    background-image: linear-gradient(#2c3b4793, #1f262c77 100%);
+    filter: brightness(130%);
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3vh;
+    padding: 8vh 0 8vh 0;
+}
+
+.img-bubble { 
+    border-top: 5px #8254aae8 solid;
+    border-bottom: 5px #8254aae8 solid;
+    height: calc(10vw + 10rem);
+    width: calc(15vw + 15rem);
+    position: relative;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+.img-bubble > img {
+    height: 100%;
+    width: 100%;
+    filter: brightness(50%);
+    opacity: 50%;
+}
+
+.animated-image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.img-bubble:hover {
+    filter:brightness(120%);
+}
+
+.img-bubble:hover .animated-image {
+    display: block;
+}
+
+.img-bubble:hover .static-image {
+    display: none;
+}
+
+
+.text-bubble {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    width: 50%;
+    height: 100%;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color:#adadad;
+    font-size: calc(0.8vw + 0.8rem);
+    font-weight: 900;
+    padding-left: 3%;
+    padding-top: 1.5%;
+}
+
+#about-scroll {
+    overflow-y: auto;
+    height: 200px;
+    width: 400px;
+    background-color:#c7c5c5;
+    border-radius: 5px 5px 5px 5px;
+    color: #3b145d;
+}
+
+.highlight {
+    background-color: #73499779; 
+    padding: 0px 5px 0px 5px;
+}
+
+/*
+
+    Animating the About Card :o 
+
+*/
+
+@keyframes enterCard-left {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(-96%); }
+}
+
+@keyframes exitCard-left {
+    from { transform: translateX(-96%); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes setCard-left {
+    to { transform: translateX(0%); }
+}
+
+@keyframes resetCard-left {
+    from { transform: translateX(0%); }
+    to { transform: translateX(-100%); }
+}
+
+/*
+    After About Intro Styling -- Academics Subsection!
+*/
+
+#academic {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(#2c3b4793, #1f262c77 100%);
+}
+
+#academic::after {
+    content: 'ACADEMICS';
+    display: flex;
+    font-size: calc(1.6rem + 1.1vw);
+    font-family: 'Cabin', sans-serif;
+    margin-left: calc(0.1rem + 1vw);
+    justify-content: center;
+    color: #fafafa;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: auto;
+    height: 100%;
+}
+
+.triangle {
+    position: absolute;
+    top: 0;
+    background-color: #8254aaa4;
+    width: 100vw;
+    height: calc(10px + 4vw);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 7%);
+}
+
+@keyframes rotateForward {
+    from { transform: rotate3d(1, 0, 0, 0deg); }
+    to { transform: rotate3d(1, 0, 0, 360deg); }
+}
+
+@keyframes reverseRotate {
+    from { transform: rotate3d(1, 0, 0, 0deg); }
+    to { transform: rotate3d(1, 0, 0, -360deg); }
+}
+
+/*
+
+    Defining planet sizes and radial distance
+    in orbital btw
+
+*/
+
+#orbital {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --planet-r: calc(6rem + 2.5vw);
+    --radial-distance: 35vh;
+    position: relative;
+    width: var(--planet-r);
+    height: var(--planet-r);
+    border-radius: 50%;
+    background-color: rgb(177, 175, 175);
+    box-shadow:
+        0 0 60px 30px rgb(155, 155, 155),  /* inner white */
+        0 0 100px 60px #734997c2, /* middle magenta */
+        0 0 140px 90px #172b50de; /* outer cyan */
+}
+
+#resume-btn {
+    color: #3b145d;
+    position: relative;
+    z-index: 100;
+    display: flex;
+    z-index: 100;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Cabin', sans-serif;
+}
+
+.bubble {
+    box-sizing: border-box;
+    position: absolute;
+    height: var(--planet-r);
+    width: calc(var(--planet-r) * 2);
+    background-color: rgba(204, 202, 202, 0.685);
+    border-radius: 1rem;
+}
+
+#orbital-trajectory {
+    position: absolute;
+    border-radius: 100%;
+    border: rgba(187, 34, 207, 0.39) dashed 3px;
+    height: calc(var(--planet-r)*2 + var(--radial-distance));
+    width: calc(var(--planet-r)*2 + var(--radial-distance));
+}
+
+.bubble:hover {
+    cursor: pointer;
+    filter: brightness(125%);
+}
+
+.bubble:hover .rotate-btn {
+    min-height: var(--planet-r);
+    transition: min-height 0.25s ease-in-out;
+}
+
+.rotate-btn {
+    content: 'Rotate Card';
+    position: absolute;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    display: block;
+    color: #fafafa;
+    background: linear-gradient(#2e4879, #154399);
+    bottom: 0;
+    padding: 2px 0px 2px 0px;
+    height: 20%;
+    border-radius: 5px 5px 5px 5px;
+    width: 100%;
+    min-height: 0;
+    transition: min-height 0.2s ease-out;
+}
+
+.bubble > ul {
+    transform: translateY(-8px);
+}
+
+.bubble > ul > label {
+    color:#154399;
+    font-family: 'Cabin', sans-serif;
+    font-size: calc(0.2vw + 1.2rem);
+    margin-bottom: 6px;
+}
+
+.bubble > ul > li {
+    margin-top: 2px;
+    color:#110020ab;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: calc(0.2vw + 0.7rem);
+}
+
+.bubble-svg {
+    filter: invert(25%) sepia() saturate(1000%) hue-rotate(210deg);
+    margin-left: 6px;
+    width: 20px;
+    height: 20px;
+}
+
+#b1 {
+    top: calc(-1 * var(--radial-distance));
+    left: calc(-1 * var(--planet-r)/2);
+}
+
+#b2 {
+    left: calc(-1 * var(--radial-distance) + -1 * var(--planet-r)/2);
+    top: 0;
+}
+
+#b3 {
+    left: calc(var(--radial-distance) + -1 * var(--planet-r)/2);
+    top: 0;
+}
+
+#b4 {
+    top: var(--radial-distance);
+    left: calc(-1 * var(--planet-r)/2);
+}

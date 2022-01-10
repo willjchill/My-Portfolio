@@ -34,9 +34,12 @@ body {
     z-index: 1000;
     bottom: 0;
     width: 100vw;
+    height: 5vh;
     color: #ffffff;
     display: none;
     flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
     justify-content: center;
     padding: 5px 0px 5px 0px;
     background-color: #734997e8;

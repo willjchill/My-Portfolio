@@ -179,7 +179,7 @@ body {
 #bg-test {
     position: absolute;
     filter: hue-rotate(180deg) saturate(75%);
-    background-image: url(/MyPortfolio/img/bg_test.jpg);
+    background-image: url(../../img/bg_test.jpg);
     opacity: 20%;
     height: 45vh;
     width: 100%;

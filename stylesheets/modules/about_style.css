@@ -318,6 +318,7 @@
     border-radius: 5px 5px 5px 5px;
     width: 100%;
     min-height: 0;
+    transform: translateY(5px);
     transition: min-height 0.2s ease-out;
 }
 
